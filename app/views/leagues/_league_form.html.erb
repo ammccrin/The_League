@@ -1,0 +1,14 @@
+<% if @errors %>
+  <%= render 'layouts/errors' %>
+<% end %>
+
+<%= form_for @league, url: leagues_path, html: {id: 'league', class: "form", autocomplete: 'off'} do |f| %>
+	  <%= f.text_field :name, placeholder: "League name" %>
+	  <%= f.text_field :teams, value: '',placeholder: '# of teams' %>
+	  <%= f.text_field :games_per_match, placeholder: '# of games a week' %>
+	  <%= f.text_field :num_of_weeks, placeholder: "# of weeks" %>
+	  <%= f.text_field :playoffs, placeholder: "# of teams in the playoffs" %>
+	  <%= f.text_field :password, placeholder: 'League password' %>
+		<p>All info can be edited later on</p>
+	  <%= f.submit "Next", :class => 'submit'  %>
+<% end %>

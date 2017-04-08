@@ -1,0 +1,9 @@
+	<% if @errors %>
+	  <%= render 'layouts/errors' %>
+	<% end %>
+
+<%= form_tag("/teams", method: "post", id: 'team', class: "form") do %>
+  <%= text_field_tag(:num_of_players, nil, placeholder: '# of players per team')%>
+  <%= submit_tag "Next", :class => 'submit'  %>
+<% end %>
+

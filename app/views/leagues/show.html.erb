@@ -1,0 +1,114 @@
+<header>
+	<div class='league_show'>
+		<div class='center'>
+			<%=  image_tag("bowling_icon") %>
+			<h1><%= @league.name %></h1>
+		</div>
+	</div>
+</header>
+
+	<div id='matches_button' class="choice">
+		<%= image_tag("match_ups") %>
+		<h2>Match Ups</h2>
+	</div>
+
+
+
+	<div class="banner curr_week"><h3>Week: <%= @week.week %> of <%= @league.num_of_weeks %></h3></div>
+
+	<div id='matches'>
+		<% @matches.each do | match | %>
+			<div class='match box'>
+				<div class="container">
+					<h2 class="team_name"><%= match.team1.name %></h2>
+					<div class="versus_holder">
+						<h2 class="versus">Vs</h2>
+						<div class="line"></div>
+					</div>
+					<h2 class="team_name"><%= match.team2.name %></h2>
+				</div>
+			</div>
+
+			<% if match_done(match) %>
+				<div class="complete box">
+					<div class="score_result">
+						<div class="container">
+							<h2><%=  match.team1.name %><span><%= " - #{score_calculator(match)[0]} Pts." %></span></h2>
+							<div class="versus_holder">
+								<h2 class="versus">Vs</h2>
+								<div class="line"></div>
+							</div>
+							<h2><%=  match.team2.name %><span><%= " - #{score_calculator(match)[1]} Pts." %></span></h2>
+						</div>
+					</div>
+
+					
+				</div>
+
+			<% else %>
+				<div class='game_holder box'>
+					<div class='scores'>
+						<h2>Scores</h2>
+						<p>Fill in the scores below, mark an 'a' if a player is absent</p>
+					</div>
+
+					<% match.games.each do | game | %>
+							<div class="game"><h4>Game <%= game.game_num %></h4></div>
+							<div class="form_holder">
+								<h2><%=  match.team1.name %></h2>
+								<div class='create_form'>
+									<%=  render partial: "leagues/team1_score_form", locals: { match: match, game: game } %>
+								</div>		
+
+								<h2><%=  match.team2.name %></h2>
+								<div class='create_form'>
+									<%=  render partial: "leagues/team2_score_form", locals: { match: match, game: game } %>
+								</div>		
+							</div>
+					<% end %>
+				</div>
+			<% end %>
+		<% end %>
+			
+	</div>
+
+
+
+
+	<div id='teams_button' class="choice">
+		<%= image_tag("teams") %>
+		<h2>Teams</h2>
+	</div>
+
+	<div id='teams'>
+		<%  @teams.each_with_index do |team, i| %>
+			<div class='team player box'>
+					<div class='banner rank'>
+						<h2><%= (i + 1).ordinalize %></h2>
+					</div>
+					<h2><%= team.name %></h2>
+					<h3><%= team.count_points %></h3>
+			</div>
+		<% end %>
+	</div>
+	
+
+
+	<div id='players_button' class="choice">
+		<%= image_tag("players") %>
+		<h2>Players</h2>
+	</div>
+
+	<div id='players'>
+		<%  @players.each do |player| %>
+			<div class='player box'>
+					<h2><%= player.name %></h2>
+					<% if player.average %>
+						<h3><%= player.average %></h3>
+					<% else %>
+						<h3>TBD</h3>
+					<% end %>
+			</div>
+		<% end %>
+	</div>
+

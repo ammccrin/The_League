@@ -222,7 +222,7 @@ $(document).ready(function() {
 
 
 	// ======= showing games to add scores ==========
-	$('html').on('click touch', '.match', function(e){
+	$('html').on('click', '.match', function(e){
 		$(this).slideToggle()
 		$(this).next().slideToggle('.box')
 	})
@@ -230,7 +230,7 @@ $(document).ready(function() {
 
 
 	// ======= showing finished side ==========
-	$('html').on('click touch', '.score_result', function(e){
+	$('html').on('click', '.score_result', function(e){
 		$(this).parents('.complete').slideToggle()
 		$(this).parent('.complete').prev().slideToggle()
 	})
@@ -239,7 +239,7 @@ $(document).ready(function() {
 
 
 	// ======= Unshowing games to add scores ==========
-	$('html').on('click touch', '.scores', function(e){
+	$('html').on('click', '.scores', function(e){
 		$(this).parents('.game_holder.box').prev().slideToggle()
 		$(this).parent('.game_holder.box').slideToggle()
 		// $('.game').slideUp()
@@ -249,7 +249,7 @@ $(document).ready(function() {
 
 
 	// ======= showing games form add scores ==========
-	$('html').on('click touch', '.game', function(e){
+	$('html').on('click', '.game', function(e){
 		$(this).next().slideToggle()
 		$(this).toggleClass('active')
 	})

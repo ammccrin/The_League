@@ -226,11 +226,20 @@ $(document).ready(function() {
 		$(this).slideToggle()
 		$(this).next().slideToggle('.box')
 	})
+
+	$('html').on('tap', '.match', function(e){
+		$(this).slideToggle()
+		$(this).next().slideToggle('.box')
+	})
 	// -------------------------------
 
 
 	// ======= showing finished side ==========
 	$('html').on('click tap', '.score_result', function(e){
+		$(this).parents('.complete').slideToggle()
+		$(this).parent('.complete').prev().slideToggle()
+	})
+	$('html').on('tap', '.score_result', function(e){
 		$(this).parents('.complete').slideToggle()
 		$(this).parent('.complete').prev().slideToggle()
 	})
@@ -244,12 +253,21 @@ $(document).ready(function() {
 		$(this).parent('.game_holder.box').slideToggle()
 		// $('.game').slideUp()
 	})
+	$('html').on('tap', '.scores', function(e){
+		$(this).parents('.game_holder.box').prev().slideToggle()
+		$(this).parent('.game_holder.box').slideToggle()
+		// $('.game').slideUp()
+	})
 	// -------------------------------
 
 
 
 	// ======= showing games form add scores ==========
 	$('html').on('click tap', '.game', function(e){
+		$(this).next().slideToggle()
+		$(this).toggleClass('active')
+	})
+	$('html').on('tap', '.game', function(e){
 		$(this).next().slideToggle()
 		$(this).toggleClass('active')
 	})

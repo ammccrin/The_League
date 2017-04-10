@@ -38,12 +38,9 @@ $(document).ready(function() {
 			console.log('updated')
 			$('#main').html(response)
 			$('.create_form').css('display', 'none')
-			$('html, body').animate({
-	      scrollTop: $(".create_form").offset().top
-			 }, 500);
 			$('.create_form').slideDown()
-			document.getElementById("create").removeEventListener("click ", addForm);
-			document.getElementById("create").addEventListener("click ", formSlide);
+			document.getElementById("create").removeEventListener("click touch", addForm);
+			document.getElementById("create").addEventListener("click touch", formSlide);
 		})
 	}
 	// -------------------------------
@@ -53,6 +50,9 @@ $(document).ready(function() {
 	// ======= form slides ==========
 	function formSlide(){
 		$('.create_form').slideToggle()
+		$('html, body').animate({
+	      scrollTop: $(".create_form").offset().top
+			 }, 500);
 	}
 	// -------------------------------
 

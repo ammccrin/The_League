@@ -25,7 +25,7 @@
 
 $(document).ready(function() {
 	 // $('#loading_screen').fadeOut('slow');
-	// ======= form tap click ==========
+	// ======= form click tap ==========
 	if ($('#create').is(':visible')){
 		document.getElementById("create").addEventListener("click", addForm);
 	}	
@@ -191,7 +191,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing players ==========
-	$('body').on('tap click', '#players_button', function(e){
+	$('body').on('click tap', '#players_button', function(e){
 		$('#players').slideToggle()
 		$('html, body').animate({
       scrollTop: $("#players").offset().top
@@ -201,7 +201,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing teams ==========
-	$('html').on('tap click', '#teams_button', function(){
+	$('html').on('click tap', '#teams_button', function(){
 		$('#teams').slideToggle()
 		$('html, body').animate({
       scrollTop: $("#teams").offset().top
@@ -211,7 +211,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing matches ==========
-	$('html').on('tap click', '#matches_button', function(){
+	$('html').on('click tap', '#matches_button', function(){
 		$('#matches').slideToggle()
 		$('.curr_week').slideToggle()
 		$('html, body').animate({
@@ -222,7 +222,7 @@ $(document).ready(function() {
 
 
 	// ======= showing games to add scores ==========
-	$('html').on('tap click', '.match', function(e){
+	$('html').on('click tap', '.match', function(e){
 		$(this).slideToggle()
 		$(this).next().slideToggle('.box')
 	})
@@ -230,7 +230,7 @@ $(document).ready(function() {
 
 
 	// ======= showing finished side ==========
-	$('html').on('tap click', '.score_result', function(e){
+	$('html').on('click tap', '.score_result', function(e){
 		$(this).parents('.complete').slideToggle()
 		$(this).parent('.complete').prev().slideToggle()
 	})
@@ -239,7 +239,7 @@ $(document).ready(function() {
 
 
 	// ======= Unshowing games to add scores ==========
-	$('html').on('tap click', '.scores', function(e){
+	$('html').on('click tap', '.scores', function(e){
 		$(this).parents('.game_holder.box').prev().slideToggle()
 		$(this).parent('.game_holder.box').slideToggle()
 		// $('.game').slideUp()
@@ -249,7 +249,7 @@ $(document).ready(function() {
 
 
 	// ======= showing games form add scores ==========
-	$('html').on('tap click', '.game', function(e){
+	$('html').on('click tap', '.game', function(e){
 		$(this).next().slideToggle()
 		$(this).toggleClass('active')
 	})

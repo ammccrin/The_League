@@ -40,7 +40,7 @@ $(document).ready(function() {
 			$('.create_form').css('display', 'none')
 			$('.create_form').slideDown()
 			document.getElementById("create").removeEventListener("click", addForm);
-			document.getElementById("create").addEventListener("click touch", formSlide);
+			document.getElementById("create").addEventListener("click", formSlide);
 		})
 	}
 	// -------------------------------

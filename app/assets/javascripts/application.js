@@ -27,7 +27,7 @@ $(document).ready(function() {
 	 // $('#loading_screen').fadeOut('slow');
 	// ======= form click touchstart ==========
 	if ($('#create').is(':visible')){
-		document.getElementById("create").addEventListener("click touchstart", addForm);
+		document.getElementById("create").addEventListener("click", addForm);
 	}	
 
 	function addForm(e){

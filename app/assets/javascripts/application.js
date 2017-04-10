@@ -25,7 +25,7 @@
 
 $(document).ready(function() {
 	 // $('#loading_screen').fadeOut('slow');
-	// ======= form click ==========
+	// ======= form click touch ==========
 	if ($('#create').is(':visible')){
 		document.getElementById("create").addEventListener("click", addForm);
 	}	
@@ -42,8 +42,8 @@ $(document).ready(function() {
 	      scrollTop: $(".create_form").offset().top
 			 }, 500);
 			$('.create_form').slideDown()
-			document.getElementById("create").removeEventListener("click", addForm);
-			document.getElementById("create").addEventListener("click", formSlide);
+			document.getElementById("create").removeEventListener("click touch", addForm);
+			document.getElementById("create").addEventListener("click touch", formSlide);
 		})
 	}
 	// -------------------------------
@@ -188,9 +188,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing players ==========
-	$('body').on('click', '#players_button', function(e){
-		e.preventDefault()
-		alert('work')
+	$('body').on('click touch', '#players_button', function(e){
 		$('#players').slideToggle()
 		$('html, body').animate({
       scrollTop: $("#players").offset().top
@@ -200,7 +198,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing teams ==========
-	$('html').on('click', '#teams_button', function(){
+	$('html').on('click touch', '#teams_button', function(){
 		$('#teams').slideToggle()
 		$('html, body').animate({
       scrollTop: $("#teams").offset().top
@@ -210,7 +208,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing matches ==========
-	$('html').on('click', '#matches_button', function(){
+	$('html').on('click touch', '#matches_button', function(){
 		$('#matches').slideToggle()
 		$('.curr_week').slideToggle()
 		$('html, body').animate({
@@ -221,7 +219,7 @@ $(document).ready(function() {
 
 
 	// ======= showing games to add scores ==========
-	$('html').on('click', '.match', function(e){
+	$('html').on('click touch', '.match', function(e){
 		$(this).slideToggle()
 		$(this).next().slideToggle('.box')
 	})
@@ -229,7 +227,7 @@ $(document).ready(function() {
 
 
 	// ======= showing finished side ==========
-	$('html').on('click', '.score_result', function(e){
+	$('html').on('click touch', '.score_result', function(e){
 		$(this).parents('.complete').slideToggle()
 		$(this).parent('.complete').prev().slideToggle()
 	})
@@ -238,7 +236,7 @@ $(document).ready(function() {
 
 
 	// ======= Unshowing games to add scores ==========
-	$('html').on('click', '.scores', function(e){
+	$('html').on('click touch', '.scores', function(e){
 		$(this).parents('.game_holder.box').prev().slideToggle()
 		$(this).parent('.game_holder.box').slideToggle()
 		// $('.game').slideUp()
@@ -248,7 +246,7 @@ $(document).ready(function() {
 
 
 	// ======= showing games form add scores ==========
-	$('html').on('click', '.game', function(e){
+	$('html').on('click touch', '.game', function(e){
 		$(this).next().slideToggle()
 		$(this).toggleClass('active')
 	})

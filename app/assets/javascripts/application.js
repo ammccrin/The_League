@@ -39,6 +39,9 @@ $(document).ready(function() {
 			$('#main').html(response)
 			$('.create_form').css('display', 'none')
 			$('.create_form').slideDown()
+			$('html, body').animate({
+	      scrollTop: $(".create_form").offset().top
+			 }, 500);
 			document.getElementById("create").removeEventListener("click", addForm);
 			document.getElementById("create").addEventListener("click", formSlide);
 		})

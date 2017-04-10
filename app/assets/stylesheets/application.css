@@ -23,7 +23,7 @@
 }
 
 .background {
-	/*background-image: url(bowl_home_mobile.jpg);*/
+	background-image: url(bowl_home_mobile.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: -120px;
@@ -31,7 +31,7 @@
 }
 
 .create {
-	background-color: yellow/*#DA4553*/;
+	background-color: #DA4553;
 }
 
 .login {

@@ -50,9 +50,9 @@ $(document).ready(function() {
 	// ======= form slides ==========
 	function formSlide(){
 		$('.create_form').slideToggle()
-		// $('html, body').animate({
-	 //      scrollTop: $(".create_form").offset().top
-		// 	 }, 500);
+		$('html, body').animate({
+	      scrollTop: $(".create_form").offset().top
+			 }, 500);
 	}
 	// -------------------------------
 

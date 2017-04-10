@@ -42,8 +42,8 @@ $(document).ready(function() {
 	      scrollTop: $(".create_form").offset().top
 			 }, 500);
 			$('.create_form').slideDown()
-			document.getElementById("create").removeEventListener("click touch", addForm);
-			document.getElementById("create").addEventListener("click touch", formSlide);
+			document.getElementById("create").removeEventListener("click ", addForm);
+			document.getElementById("create").addEventListener("click ", formSlide);
 		})
 	}
 	// -------------------------------

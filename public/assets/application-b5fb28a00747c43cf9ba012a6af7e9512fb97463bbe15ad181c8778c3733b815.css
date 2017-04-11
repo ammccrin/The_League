@@ -1,0 +1,507 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+ body {
+	margin: 0;
+	color: white;
+	font-size: 50px;
+	/*font-family: 'Lobster', cursive;*/
+	/*font-family: 'Amaranth', sans-serif;*/
+}
+
+.background {
+	background-image: url(bowl_home_mobile.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: -120px;
+	height: 66vh;
+}
+
+.create {
+	background-color: #DA4553;
+}
+
+.login {
+	background-color: #2179A6;
+}
+
+.button {
+	height: 17vh;
+	font-size: 90px;
+	text-align: center;
+	font-family: 'Amaranth', sans-serif;
+}
+
+.button p {
+	margin: 0;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.create_form {
+	/*display: none;*/
+	padding: 5% 0;
+	color: #DA4553;
+	text-align: center;
+	font-family: 'Poppins', sans-serif;
+}
+
+.form input {
+	font-family: 'Poppins', sans-serif;
+	font-weight: lighter;
+	border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  border-left: none;
+  border-right: none;
+	color: #434A54;
+	display: block;
+	background-color: #F6F7FB;
+	width: 100vw;
+	padding: 7% 0;
+	font-size: 60px;
+	text-align: center;
+	margin-bottom: 6%;
+	box-shadow: inset 0px 10px 30px -10px #CCC,
+        inset 0px -11px 8px -10px #CCC; 
+}
+
+.form input:focus {
+  border-top: 1px solid #DA4553;
+  border-bottom: 1px solid #DA4553;
+  outline: none;
+}
+
+.form input.submit {
+	width: 50%;
+	background-color: #DA4553;
+	color: white;
+	padding: 5% 0;
+	border-radius: 5px;
+	margin: auto;
+	margin-bottom: 10%;
+	font-family: 'Amaranth', sans-serif;
+	-webkit-appearance: none;
+}
+
+ul {
+	list-style: none;
+	padding: 2% 3%;
+}
+
+.errors-list li {
+	font-size: 50px;
+	margin-bottom: 5%;
+	border-bottom: 2px solid #D88791;
+}
+
+div.box {
+	background-color: #F6F7FB;
+	width: 90%;
+	margin: auto;
+	-webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+	margin-bottom: 15%;
+	padding-bottom: 2%
+}
+
+form#player input {
+	width: 90vw;
+	background-color: white;
+}
+
+form#player .submit {
+	width: 50%;
+	background-color: #DA4553;
+	color: white;
+	margin-bottom: 4%;
+	-webkit-transition: background-color 1s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 1s
+}
+
+form#player input.team_name {
+	font-weight: bold;
+	background-color: #DA4553;
+	color: white;
+	-webkit-transition: background-color 1s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 1s
+}
+
+form#player input.team_name::-webkit-input-placeholder {
+	color: #f9f9f9;
+}
+
+#done {
+	background-color: #38BC9C;
+	padding: 3% 8%;
+	color: white;
+	font-family: 'Amaranth', sans-serif;
+	z-index: 1;
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	text-decoration: none;
+	-webkit-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.75);
+}
+
+#done:visited{
+	text-decoration: none;
+	color: white;
+}
+
+.league_show {
+	background-color: #DA4553;
+	height: 100vh;
+}
+
+.center {
+	text-align: center;
+	margin: auto;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.center img {
+	width: 45vw;
+}
+
+
+h1 {
+	font-family: 'Amaranth', sans-serif;
+	font-size: 2.3em;
+	padding: 0 3%;
+}
+
+h2 {
+	color: #DA4553;
+	font-family: 'Amaranth', sans-serif;
+}
+
+#loading_screen {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 1000;
+  text-align: center;
+  display: none;
+}
+
+#loading_screen .center img{
+	width: 40vw;
+  -webkit-animation: spin 5s linear infinite;
+	animation: spin 5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.choice {
+	background-color: #2179A6;
+	text-align: center;
+	padding: 10% 0;
+	border-bottom: 7px solid white;
+	cursor: pointer;
+}
+
+.choice h2 {
+	color: white;
+	margin-top: 4%;
+	margin-bottom: 0;
+}
+
+.choice img {
+	width: auto;
+	height: 15vh;
+}
+
+#players {
+	display: none;
+	text-align: center;
+}
+
+.player.box {
+	margin-bottom: 10%;
+	margin-top: 5%;
+}
+
+.player h2{
+  border-right: 1px solid #AAB2BD;
+  width: 55%;
+  display: inline-block;
+  padding: 8% 5%;
+  padding-left: 0;
+	color: #2179A6;
+	word-wrap: break-word;
+	vertical-align: middle;
+}
+
+.player h3 {
+	font-size: 120px;
+	color: #AAB2BD;
+	margin: 0 2%;
+	padding-left: 3%;
+  margin: 0 2%;
+  display: inline-block;
+	font-family: 'Poppins', sans-serif;
+	font-weight: lighter;
+	vertical-align: middle;
+}
+
+#matches {
+	display: none;
+}
+
+.container {
+	width: 80%;
+	margin: auto;
+}
+
+.match.box {
+	text-align: center;
+	margin-top: 5%;
+	margin-bottom: 10%;
+	padding: 8% 0; 
+	padding-bottom: 8%;
+	cursor: pointer;
+}
+
+.team_name {
+	color: #2179A6;
+	margin: 0;
+}
+
+.versus_holder {
+	margin-top: 5%;
+	margin-bottom: 4%;
+	text-align: center;
+}
+
+.versus {
+	margin: 0;
+	position: relative;
+  background: #F6F7FB;
+  display: inline-block;
+  padding: 0 30px;
+	font-family: 'Poppins', sans-serif;
+	z-index: 1;
+}
+
+.versus h2 {
+	font-size: 60px;
+}
+
+.line {
+	position: relative;
+	top: -60px;
+	height: 3px;
+  background: #DA4553;
+}
+
+.game_holder.box {
+	margin-top: 5%;
+	/*background-color: #DA4553;*/
+	display: none;
+	padding: 0;
+	border-bottom: 0;
+}
+
+.games:first-child {
+	margin-top: 15%;
+}
+
+.game.active {
+	border-bottom: 10px solid;
+}
+
+.game {
+	border-collapse: collapse;
+	color: #DA4553;
+	text-align: center;
+	padding: 5% 0;
+	border-bottom: 1px solid #DA4553;
+	border-top: 1px solid #DA4553;
+	font-family: 'Poppins', sans-serif;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.form_holder {
+	display: none;
+	background-color: #F6F7FB;
+	padding: 6% 0;
+	border: none;
+	text-align: center;
+}
+
+.form_holder h2:first-child {
+	border: none;
+	padding-top: 0;
+}
+
+.form_holder h2 {
+	margin: 0;
+	color: #AAB2BD;
+	padding-top: 10%;
+	border-top: 60px solid white;
+}
+
+#score input {
+	width: 100%;
+	background-color: white;
+}
+
+#score .submit {
+	width: 50%;
+	background-color: #DA4553;
+	color: white;
+	padding: 5% 0;
+	-webkit-transition: background-color 1s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 1s
+}
+
+.scores {
+	background-color: #DA4553;
+	text-align: center;
+	padding: 5% 0;
+	cursor: pointer;
+}
+
+.scores h2 {
+	color: white;
+	margin: 0;
+	margin-bottom: 2%;
+}
+
+.scores p {
+	color: white;
+	font-family: 'Poppins', sans-serif;
+	font-weight: normal;
+	padding: 0 5%;
+	font-size: 1em;
+}
+
+.complete.box {
+	background-color: #38bc9c;
+	text-align: center;
+	margin-top: 5%;
+	padding-bottom: 0;
+	display: none;
+	cursor: pointer;
+}
+
+.score_result {
+	padding-top: 8%;
+}
+
+.complete h2 {
+	color: white;
+	margin: 0;
+}
+
+.complete h2:last-child {
+	padding-bottom: 8%;
+}
+
+
+.game.green {
+	color: #38bc9c;
+	border-color: #38bc9c;
+	background-color: #F6F7FB;
+}
+
+h4 {
+	margin: 0;
+}
+
+.final {
+	display: none;
+}
+
+span {
+  font-family: 'Poppins', sans-serif;
+  font-weight: lighter;
+  font-size: .8em;
+  color: #1f7460;
+}
+
+
+.complete .versus {
+	color: #c7f6eb;
+	background-color: #38bc9c;
+	padding: 0 4%;
+}
+
+.complete .line {
+	background: #c7f6eb;
+}
+
+.banner {
+	text-align: center;
+	background-color: #6bb7dd;
+	padding: 3% 0;
+}
+
+.curr_week {
+	display: none;
+}
+
+.banner h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+	color: white;
+	margin: 0;
+}
+
+.rank h2{
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-size: 1.2em;
+	margin: 0;
+	padding: 0;
+	color: white;
+}
+
+#teams {
+	text-align: center;
+	display: none;
+}
+
+
+
+@media only screen 
+and (min-device-width: 667px) 
+and (-webkit-min-device-pixel-ratio: 2) { 
+
+	.background {
+		background-image: url(bowl_home_mobile.jpg);
+		background-position: 0px;
+	}
+
+}

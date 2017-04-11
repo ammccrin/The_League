@@ -412,6 +412,7 @@ h2 {
 	margin-top: 5%;
 	padding-bottom: 0;
 	display: none;
+	cursor: pointer;
 }
 
 .score_result {

@@ -200,7 +200,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing teams ==========
-	$('html').on('click touch', '#teams_button', function(){
+	$('html').bind('click touch', '#teams_button', function(){
 		$('#teams').slideToggle()
 		$('html, body').animate({
       scrollTop: $("#teams").offset().top
@@ -210,7 +210,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing matches ==========
-	$('html').on('click touch', '#matches_button', function(){
+	$('html').bind('click touch', '#matches_button', function(){
 		$('#matches').slideToggle()
 		$('.curr_week').slideToggle()
 		$('html, body').animate({
@@ -221,7 +221,7 @@ $(document).ready(function() {
 
 
 	// ======= showing games to add scores ==========
-	$('html').on('click tap', 'div.match', function(e){
+	$('html').bind('click tap', 'div.match', function(e){
 		$(this).slideToggle()
 		$(this).next().slideToggle('.box')
 	})
@@ -229,7 +229,7 @@ $(document).ready(function() {
 
 
 	// ======= showing finished side ==========
-	$('html').on('click tap', '.score_result', function(e){
+	$('html').bind('click tap', '.score_result', function(e){
 		$(this).parents('.complete').slideToggle()
 		$(this).parent('.complete').prev().slideToggle()
 	})
@@ -238,7 +238,7 @@ $(document).ready(function() {
 
 
 	// ======= Unshowing games to add scores ==========
-	$('html').on('click tap', '.scores', function(e){
+	$('html').bind('click tap', '.scores', function(e){
 		$(this).parents('.game_holder.box').prev().slideToggle()
 		$(this).parent('.game_holder.box').slideToggle()
 		// $('.game').slideUp()
@@ -248,7 +248,7 @@ $(document).ready(function() {
 
 
 	// ======= showing games form add scores ==========
-	$('html').on('click tap', '.game', function(e){
+	$('html').bind('click tap', '.game', function(e){
 		$(this).next().slideToggle()
 		$(this).toggleClass('active')
 	})

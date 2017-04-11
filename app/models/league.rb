@@ -25,7 +25,7 @@ class League < ApplicationRecord
 
 	def order_teams
 		order = self.teams.sort_by { | team | team.count_points }
-		order
+		order.reverse!
 	end
 
 end

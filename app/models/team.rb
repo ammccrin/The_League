@@ -9,7 +9,7 @@ class Team < ApplicationRecord
 		points = self.points
 		points = points.map { | p | p.points }
 		
-		if points == nil
+		if points == []
 			total = 0
 			total
 		else 

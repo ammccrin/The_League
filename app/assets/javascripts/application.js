@@ -210,7 +210,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing matches ==========
-	$('html body #matches_button').bind('click touch', function(){
+	$('html').on('click touch', '#matches_button', function(){
 		$('#matches').slideToggle()
 		$('.curr_week').slideToggle()
 		$('html, body').animate({

@@ -43,8 +43,8 @@ class LeaguesController < ApplicationController
 		@matches = @week.matches
 		@games = @matches[0].games.reverse
 
-
-		if weekly_matches_done(@matches)
+		if weekly_matches_done(@matches) 
+			#Still need an else method to display the winner at the end of the season
 			@matches.each do | match |
 				score_calculator(match)
 			end

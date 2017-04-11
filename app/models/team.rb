@@ -9,7 +9,11 @@ class Team < ApplicationRecord
 		points = self.points
 		points = points.map { | p | p.points }
 		total = points.inject { | sum, p | sum + p }
-		total
+		if total == nil
+			total = 0
+		else 
+			total
+		end
 	end
 
 end

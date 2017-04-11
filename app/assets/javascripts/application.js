@@ -35,7 +35,6 @@ $(document).ready(function() {
 		$.ajax({
 			url: '/admins/new'
 		}).done(function(response){
-			console.log('updated')
 			$('#main').html(response)
 			$('.create_form').css('display', 'none')
 			$('.create_form').slideDown()

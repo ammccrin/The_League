@@ -221,7 +221,7 @@ $(document).ready(function() {
 
 
 	// ======= showing games to add scores ==========
-	$('html').on('click tap', 'div.match.box', function(e){
+	$('html').on('click touchend', 'div.match', function(e){
 		alert('hi')
 		$(this).slideToggle()
 		$(this).next().slideToggle('.box')

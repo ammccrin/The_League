@@ -190,7 +190,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing players ==========
-	$('#players_button').live('click touch', function(e){
+	$('html #players_button').bind('click touch', function(e){
 		$('#players').slideToggle()
 		$('html, body').animate({
       scrollTop: $("#players").offset().top
@@ -200,7 +200,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing teams ==========
-	$('#teams_button').live('click touch', function(){
+	$('#teams_button').bind('click touch', function(){
 		$('#teams').slideToggle()
 		$('html, body').animate({
       scrollTop: $("#teams").offset().top
@@ -210,7 +210,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing matches ==========
-	$('#matches_button').live('click touch', function(){
+	$('#matches_button').bind('click touch', function(){
 		$('#matches').slideToggle()
 		$('.curr_week').slideToggle()
 		$('html, body').animate({
@@ -221,7 +221,7 @@ $(document).ready(function() {
 
 
 	// ======= showing games to add scores ==========
-	$('div.match').live('click tap', function(e){
+	$('div.match').bind('click tap', function(e){
 		$(this).slideToggle()
 		$(this).next().slideToggle('.box')
 	})
@@ -229,7 +229,7 @@ $(document).ready(function() {
 
 
 	// ======= showing finished side ==========
-	$('.score_result').live('click tap', function(e){
+	$('.score_result').bind('click tap', function(e){
 		$(this).parents('.complete').slideToggle()
 		$(this).parent('.complete').prev().slideToggle()
 	})
@@ -238,7 +238,7 @@ $(document).ready(function() {
 
 
 	// ======= Unshowing games to add scores ==========
-	$('.scores').live('click tap', function(e){
+	$('.scores').bind('click tap', function(e){
 		$(this).parents('.game_holder.box').prev().slideToggle()
 		$(this).parent('.game_holder.box').slideToggle()
 		// $('.game').slideUp()
@@ -248,7 +248,7 @@ $(document).ready(function() {
 
 
 	// ======= showing games form add scores ==========
-	$('.game').live('click tap', function(e){
+	$('.game').bind('click tap', function(e){
 		$(this).next().slideToggle()
 		$(this).toggleClass('active')
 	})

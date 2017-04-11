@@ -190,7 +190,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing players ==========
-	$('html').on('click touch', '#players_button', function(e){
+	$('html').delegate('click touch', '#players_button', function(e){
 		$('#players').slideToggle()
 		$('html, body').animate({
       scrollTop: $("#players").offset().top
@@ -200,7 +200,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing teams ==========
-	$('html').on('click touch', '#teams_button', function(){
+	$('html').delegate('click touch', '#teams_button', function(){
 		$('#teams').slideToggle()
 		$('html, body').animate({
       scrollTop: $("#teams").offset().top
@@ -210,7 +210,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing matches ==========
-	$('html').on('click touch', '#matches_button', function(){
+	$('html').delegate('click touch', '#matches_button', function(){
 		$('#matches').slideToggle()
 		$('.curr_week').slideToggle()
 		$('html, body').animate({

@@ -190,7 +190,7 @@ $(document).ready(function() {
 
 
 	// ======= Showing players ==========
-	$('html #players_button').bind('click touch', function(e){
+	$('html').on('click touch', 'bind', '#players_button', function(e){
 		$('#players').slideToggle()
 		$('html, body').animate({
       scrollTop: $("#players").offset().top

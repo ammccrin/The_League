@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
 	def new
-		@teams = current_admin.leagues[0].teams
+		@teams = current_admin.leagues[0].teams.reverse
 		@teams = @teams.reverse
 		@league = current_admin.leagues[0]
 
@@ -21,7 +21,7 @@ class PlayersController < ApplicationController
 			player.update_attributes(name: params[:"Player #{i + 1}"])
 		end
 
-		@teams = current_admin.leagues[0].teams
+		@teams = current_admin.leagues[0].teams.reverse
 		@players = @team.players
 
 		if request.xhr?

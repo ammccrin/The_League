@@ -22,4 +22,10 @@ class League < ApplicationRecord
 		end
 	end
 
+
+	def order_teams
+		order = self.teams.sort_by { | team | team.count_points }
+		order
+	end
+
 end

@@ -14,6 +14,10 @@ class ScoresController < ApplicationController
 				scores << score
 			end
 		end
+
+		if match_done(@match)
+			score_calculator(@match)
+		end
 		# Check to see if all scores can be saved
 		saved = check_save(scores)
 

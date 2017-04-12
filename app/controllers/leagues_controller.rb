@@ -39,15 +39,9 @@ class LeaguesController < ApplicationController
 		@league = current_admin.leagues[0]
 		@week = @league.weeks[-1]
 		@teams = @league.order_teams
+		@players = order_players(@league)
 		@matches = @week.matches
 		@games = @matches[0].games.reverse
-
-		@matches.each do |match|
-			if match_done(match)
-				score_calculator(match)
-			end
-		end
-		@players = order_players(@league)
 
 
 		if weekly_matches_done(@matches)

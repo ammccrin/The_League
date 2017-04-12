@@ -21,7 +21,6 @@ class PlayersController < ApplicationController
 		end
 
 		@teams = current_admin.leagues[0].teams
-		@teams = @teams.reverse
 		@players = @team.players
 
 		if request.xhr?

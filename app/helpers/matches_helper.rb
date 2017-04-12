@@ -40,8 +40,7 @@ module MatchesHelper
 
 		team2 = match.team2.points.find_or_initialize_by(week_id: week.id)
 		team2.update_attributes(points: array[1])
-		binding.pry
-		array
+		# array
 
 	end
 
@@ -64,7 +63,7 @@ module MatchesHelper
 				team2_score += scores[i].score
 			end
 
-		binding.pry
+		
 			if team1_score > team2_score
 				points[0] += 3
 				points[1] += 0
@@ -100,7 +99,7 @@ module MatchesHelper
 			end
 			team2_scores.sort!
 
-			binding.pry
+			
 
 			if team1_scores[-1] > team2_scores[-1]
 				points[0] += 1

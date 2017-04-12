@@ -4,7 +4,7 @@ module LeaguesHelper
 	end
 
 	def weekly_matches_create(league, curr_week)
-		teams = league.teams.reverse
+		teams = league.teams
 		week = curr_week.week % (teams.length / 2)
 		if week == 0
 			week = 1

@@ -3,8 +3,7 @@
 <% end %>
 
 <%= form_tag("/scores", method: "post", id: 'score', class: "form") do %>
-	<% players = match.team2.players.reverse %>
-	<%  players.each_with_index do | player, i| %>
+	<%  match.team2.players.each_with_index do | player, i| %>
 	  <%= text_field_tag( "p#{i}".to_s, nil, placeholder: "#{player.name} - #{score_find(player, @week.week, game.game_num)}")%>
 	  <%= hidden_field_tag 'team_id', player.team.id %>
 		<%= hidden_field_tag 'game_id', game.id %>

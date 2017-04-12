@@ -41,11 +41,9 @@ class LeaguesController < ApplicationController
 		@teams = @league.order_teams
 		@players = order_players(@league)
 		@matches = @week.matches
-		@games = @matches[0].games
 
 
 		if weekly_matches_done(@matches) 
-		binding.pry
 			#Still need an else method to display the winner at the end of the season
 			@matches.each do | match |
 				score_calculator(match)

@@ -40,7 +40,7 @@ module MatchesHelper
 
 		team2 = match.team2.points.find_or_initialize_by(week_id: week.id)
 		team2.update_attributes(points: array[1])
-		# array
+		array
 
 	end
 

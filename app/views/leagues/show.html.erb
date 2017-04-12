@@ -33,12 +33,12 @@
 				<div class="complete box">
 					<div class="score_result">
 						<div class="container">
-							<h2><%=  match.team1.name %><span><%= " - #{score_calculator(match)[0]} Pts." %></span></h2>
+							<h2><%=  match.team1.name %><span><%= " - #{match.team1.show_points} Pts." %></span></h2>
 							<div class="versus_holder">
 								<h2 class="versus">Vs</h2>
 								<div class="line"></div>
 							</div>
-							<h2><%=  match.team2.name %><span><%= " - #{score_calculator(match)[1]} Pts." %></span></h2>
+							<h2><%=  match.team2.name %><span><%= " - #{match.team1.show_points} Pts." %></span></h2>
 						</div>
 					</div>
 

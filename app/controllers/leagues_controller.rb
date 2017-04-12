@@ -43,6 +43,12 @@ class LeaguesController < ApplicationController
 		@matches = @week.matches
 		@games = @matches[0].games.reverse
 
+		@matches.each do |match|
+			if match_done(match)
+				score_calculator(match)
+			end
+		end
+
 
 		if weekly_matches_done(@matches)
 			@matches.each do | match |

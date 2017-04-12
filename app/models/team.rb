@@ -8,10 +8,25 @@ class Team < ApplicationRecord
 	def count_points
 		points = self.points
 		points = points.map { | p | p.points }
-		total = points.inject { | sum, p | sum + p }
-		if total == nil
+		
+		if points == []
 			total = 0
+			total
 		else 
+			total = points.inject { | sum, p | sum + p }
+			total
+		end
+	end
+
+	def show_points
+		points = self.points
+		points = points.map { | p | p.points }
+
+		if points == []
+			total = 0
+			total
+		else 
+			total = points.inject { | sum, p | sum + p }
 			total
 		end
 	end

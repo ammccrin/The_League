@@ -47,23 +47,26 @@ module MatchesHelper
 	def top_wins (match)
 		games = match.league.games_per_match
 
-		team1_score = 0
-		team2_score = 0
 		points = [0, 0]
 
 		games.times do |i|
+		team1_score = 0
+		team2_score = 0
 
 			match.team1.players.each do |p|
-				scores = p.scores.sort_by { | score | score.id  }.reverse!
+				scores = p.scores.sort_by { | score | score.id  }
+				scores = scores.last(games)
 				team1_score += scores[i].score
 			end
 
 			match.team2.players.each do |p|
-				scores = p.scores.sort_by { | score | score.id  }.reverse!
+				scores = p.scores.sort_by { | score | score.id  }
+				scores = scores.last(games)
 				team2_score += scores[i].score
 			end
 
 			if team1_score > team2_score
+				binding.pry
 				points[0] += 3
 				points[1] += 0
 			else

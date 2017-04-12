@@ -65,6 +65,7 @@ module MatchesHelper
 				team2_score += scores[i].score
 			end
 
+
 			if team1_score > team2_score
 				binding.pry
 				points[0] += 3
@@ -101,6 +102,11 @@ module MatchesHelper
 			end
 			team2_scores.sort!
 
+<<<<<<< HEAD
+=======
+			
+
+>>>>>>> 87b313d952598fdc13691e662845978be173b82d
 			if team1_scores[-1] > team2_scores[-1]
 				points[0] += 1
 				points[1] += 0

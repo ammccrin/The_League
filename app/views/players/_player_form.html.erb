@@ -2,7 +2,7 @@
   <%= render 'layouts/errors' %>
 <% end %>
 
-<% @teams.each do |team| %>
+<% @teams.reverse.each do |team| %>
 	<div class="box">
 		<%= form_tag("/players", method: "post", id: 'player', class: "form player") do %>
 			<%= text_field_tag(:team_name, nil, placeholder: team.name, class: 'team_name')%>

@@ -44,7 +44,6 @@ class LeaguesController < ApplicationController
 
 
 		if weekly_matches_done(@matches) 
-		binding.pry
 			#Still need an else method to display the winner at the end of the season
 			@matches.each do | match |
 				score_calculator(match)

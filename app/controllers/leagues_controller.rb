@@ -41,7 +41,6 @@ class LeaguesController < ApplicationController
 		@teams = @league.order_teams
 		@players = order_players(@league)
 		@matches = @week.matches
-		@games = @matches[0].games
 
 
 		if weekly_matches_done(@matches) 

@@ -8,4 +8,5 @@ class Match < ApplicationRecord
 
 
 	validates :team1_id, :team2_id, :league_id, presence: true 
+
 end

@@ -36,7 +36,6 @@ class LeaguesController < ApplicationController
 	end
 
 	def show
-		binding.pry
 		if admin_login? == false && user_login? == false
 			redirect '/'
 		end
@@ -54,7 +53,7 @@ class LeaguesController < ApplicationController
 		@week = @league.weeks[-1]
 		@teams = @league.order_teams
 		@players = order_players(@league)
-		@matches = @week.matches
+		@matches = @week.order_matches
 		if @week.matches == []
 			weekly_matches_create(@league, @week)
 		end

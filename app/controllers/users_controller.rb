@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	def new
+		@admin = Admin.new
 		@user = User.new
 		if request.xhr?
 			render 'users/_user_form', layout: false
@@ -14,20 +15,22 @@ class UsersController < ApplicationController
 
 			if request.xhr?
 				if @user 
+				  session[:admin_id] = nil
 					session[:user_id] = @user.id
 					@league = @user.league
 					redirect_to league_path(@league)
 				else
-				 errors = ['Username and Password do not match']
+				 errors = ['Name and Password do not match']
 				 render 'layouts/_errors', status: :unprocessable_entity, layout: false, locals: { errors: errors }        
 				end
 			else
 				if @user
+				  session[:admin_id] = nil
 					session[:user_id] = @user.id
 					@league = @user.league
 					render "leagues/show"
 				else
-					@errors = ['Username and Password do not match']
+					@errors = ['Name and Password do not match']
 			    render 'users/new', locals: { errors: @errors }
 				end
 			end

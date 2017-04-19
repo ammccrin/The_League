@@ -15,7 +15,6 @@ class LeaguesController < ApplicationController
 		if request.xhr?
 				if @league.save
 					User.create(name: league_params[:name], password: league_params[:password], league_id: @league.id)
-					binding.pry
 					team_create(params[:league][:teams], @league.id)
 					@week = Week.create(league_id: @league.id, week: 1)
 					weekly_matches_create(@league, @week)
@@ -37,6 +36,7 @@ class LeaguesController < ApplicationController
 	end
 
 	def show
+		binding.pry
 		if admin_login? == false && user_login? == false
 			redirect '/'
 		end

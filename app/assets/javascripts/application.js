@@ -39,10 +39,11 @@ $(document).ready(function() {
 			$('.admin').css('display', 'none')
 			$('.admin').slideDown()
 			$('html, body').animate({
-	      scrollTop: $(".admin").offset().top
+	      scrollTop: $(".new").offset().top
 			 }, 500);
 			document.getElementById("create").removeEventListener("click", addForm);
 			document.getElementById("create").addEventListener("click", formSlide);
+			$('#user_holder').slideUp()
 		})
 	}
 	// -------------------------------
@@ -66,6 +67,7 @@ $(document).ready(function() {
 			 }, 500);
 			document.getElementById("login").removeEventListener("click", addUserForm);
 			document.getElementById("login").addEventListener("click", userFormSlide);
+			$('.new').slideUp()
 		})
 	}
 	// -------------------------------
@@ -74,18 +76,18 @@ $(document).ready(function() {
 
 	// ======= form slides ==========
 	function formSlide(){
-		$('.admin').slideToggle()
-		$('.user').slideUp()
+		$('.new').slideToggle()
+		$('#user_holder').slideUp()
 		$('html, body').animate({
-	      scrollTop: $(".admin").offset().top
+	      scrollTop: $(".new").offset().top
 			 }, 500);
 	}
 
 	function userFormSlide(){
-		$('.user').slideToggle()
-		$('.admin').slideUp()
+		$('#user_holder').slideToggle()
+		$('.new').slideUp()
 		$('html, body').animate({
-	      scrollTop: $(".user").offset().top
+	      scrollTop: $("#user_holder").offset().top
 			 }, 500);
 	}
 	// -------------------------------
@@ -104,7 +106,7 @@ $(document).ready(function() {
 			
 			setTimeout(function(){
 				$('#admin').remove()
-				$('.create_form').html(response)
+				$('.new').html(response)
 				$('#league').css('display', 'none')
 				$( "#league" ).fadeIn() 
 		    $('html, body').animate({
@@ -124,7 +126,21 @@ $(document).ready(function() {
 
 
 
-// ======= admin submit ==========
+	// Admin login click
+	$('html').on('click touch', '#admin_login_form', function(e){
+		$('.user').fadeOut()
+		$('.admin_login').fadeIn()
+	})
+
+	$('html').on('click touch', '#user_login_form', function(e){
+		$('.admin_login').fadeOut()
+		$('.user').fadeIn()
+	})
+	// --------------------------------
+
+
+
+// ======= user submit ==========
 	$('header').on('submit', '#user', function(e){
 		e.preventDefault()
 		$.ajax({
@@ -132,17 +148,40 @@ $(document).ready(function() {
 			method: $(e.target).attr('method'),
 			data: $(e.target).serialize()
 		}).done(function(response){
-			
+
 			// $( "#login" ).fadeOut()
 
 		}).fail(function(failure){
 			if (!$('.errors-list').is(':visible')){
 				$(e.target).before(failure.responseText)
 			}
-			$('#login input.submit').attr('disabled', false);
+			$('#user input.submit').attr('disabled', false);
 		})
 	})
 	// -------------------------------
+
+
+
+// ======= admin login ==========
+	$('header').on('submit', '#admin_login', function(e){
+		e.preventDefault()
+		$.ajax({
+			url: $(e.target).attr('action'),
+			method: $(e.target).attr('method'),
+			data: $(e.target).serialize()
+		}).done(function(response){
+
+			// $( "#login" ).fadeOut()
+
+		}).fail(function(failure){
+			if (!$('.errors-list').is(':visible')){
+				$(e.target).before(failure.responseText)
+			}
+			$('#admin_login input.submit').attr('disabled', false);
+		})
+	})
+	// -------------------------------
+
 
 
 
@@ -158,7 +197,7 @@ $(document).ready(function() {
 
 			setTimeout(function(){
 				$('#league').remove()
-				$('.create_form').html(response)
+				$('.new').html(response)
 				$('#team').css('display', 'none')
 				$( "#team" ).fadeIn() 
 				$('html, body').animate({
@@ -190,7 +229,7 @@ $(document).ready(function() {
 			
 			setTimeout(function(){
 				$('#team').remove()
-				$('.create_form').html(response)
+				$('.new').html(response)
 				$('.player').css('display', 'none')
 				$( ".player" ).fadeIn() 
 

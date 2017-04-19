@@ -6,6 +6,21 @@
 	<%= form_for @user, url: {action: "create"}, :autocomplete => 'off', html: {id: 'user', class: "form"} do |f| %>
 	  <%= f.text_field :name, placeholder: "League name" %>
 	  <%= f.text_field :password, placeholder: 'League password' %>
-	  <%= f.submit "Next", :class => 'submit'  %>
+	  <%= f.submit "Login", :class => 'submit'  %>
+		<p id='admin_login_form'>Admin Login</p>
+	<% end %>
+</div>
+
+<!-- Admin login -->
+<div class='admin_login create_form'>
+	<% if @errors %>
+	  <%= render 'layouts/errors' %>
+	<% end %>
+
+	<%= form_for @admin, url: admins_login_path, :autocomplete => 'off', html: {id: 'admin_login', class: "form"} do |f| %>
+	  <%= f.text_field :username, placeholder: "Admin username" %>
+	  <%= f.text_field :password, placeholder: 'Admin password' %>
+	  <%= f.submit "Login", :class => 'submit'  %>
+		<p id='user_login_form'>User Login</p>
 	<% end %>
 </div>

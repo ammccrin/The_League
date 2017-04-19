@@ -105,6 +105,15 @@
 	background-color: #2179a6;
 }
 
+.admin_login {
+	display: none;
+}
+
+#admin_login .submit {
+	background-color: #2179a6;
+}
+
+
 ul {
 	list-style: none;
 	padding: 2% 3%;

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
 	resources :leagues
 	resources :admins
+	resources :users
 	resources :teams
 	resources :players
 	resources :scores

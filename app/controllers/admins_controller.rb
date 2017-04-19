@@ -28,7 +28,7 @@ class AdminsController < ApplicationController
 				else
 
 					@errors = @admin.errors.full_messages
-			    render 'leagues/new', locals: { errors: @errors }
+			    render 'admins/new', locals: { errors: @errors }
 				end
 			end
 				

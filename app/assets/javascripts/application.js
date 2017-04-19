@@ -25,7 +25,7 @@
 
 $(document).ready(function() {
 	 // $('#loading_screen').fadeOut('slow');
-	// ======= form click tap ==========
+	// ======= admin form click  ==========
 	if ($('#create').is(':visible')){
 		document.getElementById("create").addEventListener("click", addForm);
 	}	
@@ -35,11 +35,11 @@ $(document).ready(function() {
 		$.ajax({
 			url: '/admins/new'
 		}).done(function(response){
-			$('#main').html(response)
-			$('.create_form').css('display', 'none')
-			$('.create_form').slideDown()
+			$('#admin_holder').html(response)
+			$('.admin').css('display', 'none')
+			$('.admin').slideDown()
 			$('html, body').animate({
-	      scrollTop: $(".create_form").offset().top
+	      scrollTop: $(".admin").offset().top
 			 }, 500);
 			document.getElementById("create").removeEventListener("click", addForm);
 			document.getElementById("create").addEventListener("click", formSlide);
@@ -48,12 +48,44 @@ $(document).ready(function() {
 	// -------------------------------
 
 
+	// ======= user form click  ==========
+	if ($('#login').is(':visible')){
+		document.getElementById("login").addEventListener("click", addUserForm);
+	}	
+
+	function addUserForm(e){
+		e.preventDefault()
+		$.ajax({
+			url: '/users/new'
+		}).done(function(response){
+			$('#user_holder').html(response)
+			$('.user').css('display', 'none')
+			$('.user').slideDown()
+			$('html, body').animate({
+	      scrollTop: $(".user").offset().top
+			 }, 500);
+			document.getElementById("login").removeEventListener("click", addUserForm);
+			document.getElementById("login").addEventListener("click", userFormSlide);
+		})
+	}
+	// -------------------------------
+
+
 
 	// ======= form slides ==========
 	function formSlide(){
-		$('.create_form').slideToggle()
+		$('.admin').slideToggle()
+		$('.user').slideUp()
 		$('html, body').animate({
-	      scrollTop: $(".create_form").offset().top
+	      scrollTop: $(".admin").offset().top
+			 }, 500);
+	}
+
+	function userFormSlide(){
+		$('.user').slideToggle()
+		$('.admin').slideUp()
+		$('html, body').animate({
+	      scrollTop: $(".user").offset().top
 			 }, 500);
 	}
 	// -------------------------------
@@ -86,6 +118,28 @@ $(document).ready(function() {
 				$(e.target).before(failure.responseText)
 			}
 			$('#admin input.submit').attr('disabled', false);
+		})
+	})
+	// -------------------------------
+
+
+
+// ======= admin submit ==========
+	$('header').on('submit', '#user', function(e){
+		e.preventDefault()
+		$.ajax({
+			url: $(e.target).attr('action'),
+			method: $(e.target).attr('method'),
+			data: $(e.target).serialize()
+		}).done(function(response){
+			
+			// $( "#login" ).fadeOut()
+
+		}).fail(function(failure){
+			if (!$('.errors-list').is(':visible')){
+				$(e.target).before(failure.responseText)
+			}
+			$('#login input.submit').attr('disabled', false);
 		})
 	})
 	// -------------------------------

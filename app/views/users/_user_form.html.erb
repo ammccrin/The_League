@@ -1,0 +1,11 @@
+<div class='user create_form'>
+	<% if @errors %>
+	  <%= render 'layouts/errors' %>
+	<% end %>
+
+	<%= form_for @user, url: {action: "create"}, :autocomplete => 'off', html: {id: 'user', class: "form"} do |f| %>
+	  <%= f.text_field :name, placeholder: "League name" %>
+	  <%= f.text_field :password, placeholder: 'League password' %>
+	  <%= f.submit "Next", :class => 'submit'  %>
+	<% end %>
+</div>

@@ -14,6 +14,8 @@ class LeaguesController < ApplicationController
 
 		if request.xhr?
 				if @league.save
+					User.create(name: league_params[:name], password: league_params[:password], league_id: @league.id)
+					binding.pry
 					team_create(params[:league][:teams], @league.id)
 					@week = Week.create(league_id: @league.id, week: 1)
 					weekly_matches_create(@league, @week)
@@ -35,30 +37,45 @@ class LeaguesController < ApplicationController
 	end
 
 	def show
-		@admin = current_admin 
-		@league = current_admin.leagues[0]
+		if admin_login? == false && user_login? == false
+			redirect '/'
+		end
+	
+		if admin_login?
+			@admin = current_admin
+			@league = @admin.leagues[0]
+		end 
+
+		if user_login?
+			@user = current_user
+			@league = @user.league
+		end
+
 		@week = @league.weeks[-1]
 		@teams = @league.order_teams
 		@players = order_players(@league)
 		@matches = @week.matches
+		if @week.matches == []
+			weekly_matches_create(@league, @week)
+		end
 
 
 		if weekly_matches_done(@matches) 
-			#Still need an else method to display the winner at the end of the season
 			@matches.each do | match |
 				score_calculator(match)
 			end
-			# Next week
-			@week = @league.weeks.create(week: @league.weeks.length + 1)
-			weekly_matches_create(@league, @week)
-			@matches = @week.matches
 
-			# Calculate player averages
-			@players.each do | player |
-				player.calculate_average
+			if @league.num_of_weeks != @week.week
+				@week = @league.weeks.create(week: @league.weeks.length + 1)
+				weekly_matches_create(@league, @week)
+				@matches = @week.matches
+
+				@players.each do | player |
+					player.calculate_average
+				end
+
+				@players = order_players(@league)
 			end
-
-			@players = order_players(@league)
 		end
 	end
 

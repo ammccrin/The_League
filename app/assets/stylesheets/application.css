@@ -526,6 +526,11 @@ span {
 	display: none;
 }
 
+#admin_login_form, #user_login_form {
+	color: #2179a6;
+	text-decoration: underline;
+}
+
 
 @media only screen and (min-width: 413px) { 
 
@@ -533,8 +538,53 @@ span {
 		background-position: 0px;
 	}
 
+	.form input, h4 {
+    font-size: .8em;
+	}
+
+	.errors-list li, .form p, #done, .banner h3, .scores p {
+		font-size: .7em;
+	}
+
 	.button {
 		font-size: 1.2em;
+	}
+
+	h1 {
+		font-size: 1.6em;
+	}
+
+	.center img {
+		width: 40vw;
+	}
+
+	.choice h2, .team_name, .scores h2, .complete h2 {
+    font-size: 1em;
+	}
+
+	.versus, h2 {
+		font-size: .9em;
+	}
+
+	.line {
+    top: -35px;
+	}
+
+	.versus_holder {
+		margin-top: 5%;
+	}
+
+	.complete .versus_holder {
+    margin-top: 3%;
+	}
+
+	.rank h2 {
+		font-size: .7em;
+		padding: 2%;
+	}
+
+	.player h3 {
+    font-size: 1.4em;
 	}
 }
 

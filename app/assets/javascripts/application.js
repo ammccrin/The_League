@@ -323,7 +323,7 @@ $(document).ready(function() {
 
 	// ======= showing finished side ==========
 	$('html').on('click tap', '.score_result', function(e){
-		$(this).parents('.complete').slideToggle()
+		$(this).parents('.complete').slideToggle(0)
 		$(this).parent('.complete').prev().slideToggle()
 	})
 	// -------------------------------

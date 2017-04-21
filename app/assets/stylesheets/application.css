@@ -539,7 +539,7 @@ span {
 		background-position: 0px;
 	}
 
-	.form input, h4 {
+	.form input, .banner h3, h4 {
     font-size: .6em;
 	}
 
@@ -556,7 +556,7 @@ span {
 		font-size: .7em;
 	}
 
-	.errors-list li, .banner h3, .form p, .scores p {
+	.errors-list li, .form p, .scores p {
 		font-size: .5em;
 	}
 
@@ -597,7 +597,8 @@ span {
 	}
 
 	.complete .versus_holder {
-    margin-top: 3%;
+    margin-top: 5%;
+    margin-bottom: 3%;
 	}
 
 	.rank h2 {
@@ -644,6 +645,10 @@ span {
     margin-right: 2%;
 	}
 
+/*	.match.box:last-child {
+		margin-bottom: 5%;
+	}*/
+
 	.game_holder.box {
 		width: 500px;
 		margin-bottom: 2%;
@@ -668,12 +673,41 @@ span {
     background-color: #f6f7fb;
     box-shadow: none;
     border-top: none;
-    border-bottom: 1px solid #aab2bd;
+    border-bottom: 1px solid #ccc;
 	}
 
 	#score input:focus {
 		border-top: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #da4553; 
+	}
+
+	.complete.box {
+    padding: 3.6% 0;
+		width: 500px;
+		margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+	}
+
+	.complete .score_result {
+		padding: 0;
+	}
+
+	.complete .versus {
+		font-size: .7em;
+	}
+
+	.complete h2:last-child {
+    padding-bottom: 0;
+	}
+
+	.player.box {
+    width: 500px;
+    display: inline-block;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-bottom: 0;
 	}
 }
 

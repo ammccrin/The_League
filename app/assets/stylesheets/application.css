@@ -295,6 +295,7 @@ h2 {
 
 #matches {
 	display: none;
+	text-align: center;
 }
 
 .container {
@@ -358,7 +359,7 @@ h2 {
 }
 
 .game.active {
-	border-bottom: 10px solid;
+	border-bottom: 7px solid;
 }
 
 .game {
@@ -539,15 +540,28 @@ span {
 	}
 
 	.form input, h4 {
-    font-size: .8em;
+    font-size: .6em;
 	}
 
-	.errors-list li, .form p, #done, .banner h3, .scores p {
+	.form input {
+		padding: 5% 0 ;
+	}
+
+	.form input.submit {
+		width: 30%;
+		padding: 4% 0;
+	}
+
+	#done {
 		font-size: .7em;
 	}
 
+	.errors-list li, .banner h3, .form p, .scores p {
+		font-size: .5em;
+	}
+
 	.button {
-		font-size: 1.2em;
+		font-size: 1em;
 	}
 
 	h1 {
@@ -555,15 +569,23 @@ span {
 	}
 
 	.center img {
-		width: 40vw;
+		width: 35vh;
 	}
 
-	.choice h2, .team_name, .scores h2, .complete h2 {
-    font-size: 1em;
+	.choice h2 {
+		font-size: .9em
 	}
 
-	.versus, h2 {
-		font-size: .9em;
+	.team_name, .scores h2, .complete h2 {
+    font-size: .8em;
+	}
+
+	h2 {
+		font-size: .8em;
+	}
+
+	.versus, .form_holder h2 {
+		font-size: .7em;
 	}
 
 	.line {
@@ -586,18 +608,153 @@ span {
 	.player h3 {
     font-size: 1.4em;
 	}
+
+	.create_form .box {
+		width: 400px;
+		display: inline-block;
+		margin-left: 2%;
+		margin-right: 2%;
+	}
+
+	form#player input {
+		width: 100%;
+	}
+
+	#done {
+		font-size: .5em;
+		padding: 2% 5%;
+	}
+
+	#matches {
+		text-align: center;
+	}
+
+	.box {
+		vertical-align: top;
+	}
+
+	.match.box {
+		vertical-align: top;
+		width: 500px;
+		padding-bottom: 0;
+    padding: 4% 0;
+    display: inline-block;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+	}
+
+	.game_holder.box {
+		width: 500px;
+		margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+	}
+
+	.scores {
+		width: 500px;
+	}
+
+	.form_holder .create_form {
+    margin-top: 3%;
+	}
+
+	.errors-list {
+		margin: 0;
+		margin-bottom: 2%;
+	}
+
+	#score input{
+    background-color: #f6f7fb;
+    box-shadow: none;
+    border-top: none;
+    border-bottom: 1px solid #aab2bd;
+	}
+
+	#score input:focus {
+		border-top: none;
+    border-bottom: 1px solid #ccc;
+	}
 }
 
 
 @media only screen and (min-width: 980px) { 
 
-	.background {
-		background-image: url(bowl_home.jpg);
-		background-position: 0px;
-	}
-
-	.button {
-		font-size: 1em;
+	.form input.submit {
+		width: 30%;
 	}
 }
 
+
+@media only screen and (min-width: 1000px) { 
+
+	.button {
+		display: inline-block;
+		width: 50%;
+	}
+
+	.create {
+	  position: absolute;
+    left: 0;
+    bottom: 0;
+	}
+
+	.login {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+	}
+
+	.background {
+		height:90vh;
+	}
+
+	.create_form {
+    margin: auto;
+    margin-top: 10%;
+    width: 80%;
+	}
+
+	.form input {
+		width: 100%;
+	}
+
+	form#player input {
+		width: 100%;
+	}
+
+	.create_form .box {
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 40%;
+    display: inline-block;
+	}
+
+	form#player input.team_name {
+    padding: 7% 0;
+	}
+
+	form#player input {
+    border: none;
+	}
+
+	form#player input:focus {
+    border: none;
+	}
+
+	form#player input {
+    width: 100%;
+    padding: 5% 0;
+    box-shadow: inset 0px 10px 30px -10px #CCC,
+        inset 0px -11px 8px -10px #CCC; 
+	}
+	
+}
+
+@media only screen and (min-width: 1200px) { 
+
+.background {
+		background-image: url(bowl_home.jpg);
+		background-position: 0px;
+	}
+}

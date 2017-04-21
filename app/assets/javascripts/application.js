@@ -315,8 +315,8 @@ $(document).ready(function() {
 
 	// ======= showing games to add scores ==========
 	$('html').on('click tap', 'div.match', function(e){
-		$(this).slideToggle()
-		$(this).next().slideToggle('.box')
+		$(this).slideToggle(0)
+		$(this).next().slideToggle('.box').css('display', 'inline-block')
 	})
 	// -------------------------------
 
@@ -333,7 +333,7 @@ $(document).ready(function() {
 	// ======= Unshowing games to add scores ==========
 	$('html').on('click tap', '.scores', function(e){
 		$(this).parents('.game_holder.box').prev().slideToggle()
-		$(this).parent('.game_holder.box').slideToggle()
+		$(this).parent('.game_holder.box').slideToggle(0)
 		// $('.game').slideUp()
 	})
 	// -------------------------------

@@ -7,9 +7,12 @@
 	</div>
 </header>
 
-	<div id='matches_button' class="choice">
-		<%= image_tag("match_ups") %>
-		<h2>Match Ups</h2>
+	<div class='blue_background'>
+		<div id='matches_button' class="choice">
+			<%= image_tag("match_ups") %>
+			<%= image_tag("match_ups_shadow", :class => "image_shadow") %>
+			<h2>Match Ups</h2>
+		</div>
 	</div>
 
 
@@ -57,7 +60,10 @@
 								<div class='create_form'>
 									<%=  render partial: "leagues/team1_score_form", locals: { match: match, game: game } %>
 								</div>		
-
+								<div class="versus_holder">
+									<h2 class="versus">Vs</h2>
+									<div class="line"></div>
+								</div>
 								<h2><%=  match.team2.name %></h2>
 								<div class='create_form'>
 									<%=  render partial: "leagues/team2_score_form", locals: { match: match, game: game } %>
@@ -72,11 +78,13 @@
 
 
 
-
+<div class='blue_background'>
 	<div id='teams_button' class="choice">
 		<%= image_tag("teams") %>
+		<%= image_tag("teams_shadow", :class => "image_shadow") %>
 		<h2>Teams</h2>
 	</div>
+</div>
 
 	<div id='teams'>
 		<%  @teams.each_with_index do |team, i| %>
@@ -91,10 +99,12 @@
 	</div>
 	
 
-
-	<div id='players_button' class="choice">
-		<%= image_tag("players") %>
-		<h2>Players</h2>
+	<div class='blue_background'>
+		<div id='players_button' class="choice">
+			<%= image_tag("players") %>
+			<%= image_tag("players_shadow", :class => "image_shadow") %>
+			<h2>Players</h2>
+		</div>
 	</div>
 
 	<div id='players'>

@@ -40,7 +40,7 @@ $(document).ready(function() {
 			$('.admin').slideDown()
 			$('html, body').animate({
 	      scrollTop: $(".new").offset().top
-			 }, 500);
+			 }, 1000);
 			document.getElementById("create").removeEventListener("click", addForm);
 			document.getElementById("create").addEventListener("click", formSlide);
 			$('#user_holder').slideUp()
@@ -64,10 +64,10 @@ $(document).ready(function() {
 			$('.user').slideDown()
 			$('html, body').animate({
 	      scrollTop: $(".user").offset().top
-			 }, 500);
+			 }, 1000);
 			document.getElementById("login").removeEventListener("click", addUserForm);
-			document.getElementById("login").addEventListener("click", userFormSlide);
 			$('.new').slideUp()
+			document.getElementById("login").addEventListener("click", userFormSlide);
 		})
 	}
 	// -------------------------------
@@ -80,7 +80,7 @@ $(document).ready(function() {
 		$('#user_holder').slideUp()
 		$('html, body').animate({
 	      scrollTop: $(".new").offset().top
-			 }, 500);
+			 }, 1000);
 	}
 
 	function userFormSlide(){
@@ -88,7 +88,7 @@ $(document).ready(function() {
 		$('.new').slideUp()
 		$('html, body').animate({
 	      scrollTop: $("#user_holder").offset().top
-			 }, 500);
+			 }, 1000);
 	}
 	// -------------------------------
 
@@ -111,7 +111,7 @@ $(document).ready(function() {
 				$( "#league" ).fadeIn() 
 		    $('html, body').animate({
 		      scrollTop: $("#league").offset().top
-				 }, 500);
+				 }, 1000);
 	    }, 300);
 	    
 
@@ -119,6 +119,9 @@ $(document).ready(function() {
 			if (!$('.errors-list').is(':visible')){
 				$(e.target).before(failure.responseText)
 			}
+			$('html, body').animate({
+	      scrollTop: $(".errors-list").offset().top
+			 }, 1000);
 			$('#admin input.submit').attr('disabled', false);
 		})
 	})
@@ -155,6 +158,9 @@ $(document).ready(function() {
 			if (!$('.errors-list').is(':visible')){
 				$(e.target).before(failure.responseText)
 			}
+			$('html, body').animate({
+	      scrollTop: $(".errors-list").offset().top
+			 }, 1000);
 			$('#user input.submit').attr('disabled', false);
 		})
 	})
@@ -177,6 +183,9 @@ $(document).ready(function() {
 			if (!$('.errors-list').is(':visible')){
 				$(e.target).before(failure.responseText)
 			}
+			$('html, body').animate({
+	      scrollTop: $(".errors-list").offset().top
+			 }, 1000);
 			$('#admin_login input.submit').attr('disabled', false);
 		})
 	})
@@ -202,7 +211,7 @@ $(document).ready(function() {
 				$( "#team" ).fadeIn() 
 				$('html, body').animate({
 	      scrollTop: $("#team").offset().top
-			 }, 500);
+			 }, 1000);
 	    }, 300);
 
 		}).fail(function(failure){
@@ -210,6 +219,9 @@ $(document).ready(function() {
 			if (!$('.errors-list').is(':visible')){
 				$(e.target).before(failure.responseText)
 			}
+			$('html, body').animate({
+	      scrollTop: $(".errors-list").offset().top
+			 }, 1000);
 			$('#league input.submit').attr('disabled', false);
 		})
 	})
@@ -235,7 +247,7 @@ $(document).ready(function() {
 
 				$('html, body').animate({
 	        scrollTop: $("#player").offset().top
-		    }, 500);
+		    }, 1000);
 	    }, 300);
 
 		}).fail(function(failure){
@@ -243,6 +255,9 @@ $(document).ready(function() {
 			if (!$('.errors-list').is(':visible')){
 				$(e.target).before(failure.responseText)
 			}
+			$('html, body').animate({
+	      scrollTop: $(".errors-list").offset().top
+			 }, 1000);
 			$('#team input.submit').attr('disabled', false);
 		})
 	})
@@ -276,6 +291,9 @@ $(document).ready(function() {
 			if (!$('.errors-list').is(':visible')){
 				$(e.target).before(failure.responseText)
 			}
+			$('html, body').animate({
+	      scrollTop: $(".errors-list").offset().top
+			 }, 1000);
 			$('#player input.submit').attr('disabled', false);
 		})
 	})
@@ -287,7 +305,7 @@ $(document).ready(function() {
 		$('#players').slideToggle()
 		$('html, body').animate({
       scrollTop: $("#players").offset().top
-		 }, 500);
+		 }, 1000);
 	})
 	// -------------------------------
 
@@ -297,7 +315,7 @@ $(document).ready(function() {
 		$('#teams').slideToggle()
 		$('html, body').animate({
       scrollTop: $("#teams").offset().top
-		 }, 500);
+		 }, 1000);
 	})
 	// -------------------------------
 
@@ -308,7 +326,7 @@ $(document).ready(function() {
 		$('.curr_week').slideToggle()
 		$('html, body').animate({
       scrollTop: $("#matches").offset().top
-		 }, 500);
+		 }, 1000);
 	})
 	// -------------------------------
 
@@ -359,25 +377,21 @@ $(document).ready(function() {
 		}).done(function(response){
 			$('.errors-list').hide()
 			$(e.target).hide().html(response).fadeIn()
-			// $(e.target).children('.submit').css('background-color', '#38bc9c')
-
-			// setTimeout(function(){
-			// 	$(e.target).children('.submit').css('background-color', '#38BC9C')
-	  //   }, 1000);
-
 	    $(e.target).children('.submit').attr('disabled', false);
-
-			// $(e.target).parents('.form_holder').prev().css({ 'border-bottom-color': '#38bc9c', 'color': '#38bc9c' })
 
 		}).fail(function(failure){
 			$('.errors-list').hide()
 			if (!$('.errors-list').is(':visible')){
 				$(e.target).before(failure.responseText)
 			}
+			$('html, body').animate({
+	      scrollTop: $(".errors-list").offset().top
+			 }, 1000);
 			$('#score input.submit').attr('disabled', false);
 		})
 	})
 	// -------------------------------
+
 
 
 

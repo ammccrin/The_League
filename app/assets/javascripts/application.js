@@ -202,13 +202,13 @@ $(document).ready(function() {
 			method: $(e.target).attr('method'),
 			data: $(e.target).serialize()
 		}).done(function(response){
-			$( "#league" ).fadeOut()
+			$( "#league" ).fadeOut(0)
+				$('.new').html(response)
+				$( "#team" ).fadeIn() 
 
 			setTimeout(function(){
 				$('#league').remove()
-				$('.new').html(response)
-				$('#team').css('display', 'none')
-				$( "#team" ).fadeIn() 
+				// $('#team').css('display', 'none')
 				$('html, body').animate({
 	      scrollTop: $("#team").offset().top
 			 }, 1000);

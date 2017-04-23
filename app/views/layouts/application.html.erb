@@ -15,12 +15,6 @@
   </head>
 
   <body>
-    <div id='loading_screen'>
-      <div class="center">
-        <%=  image_tag("ball") %>
-        <h2>Sorry, only available on Mobile Devices</h2>
-      </div>
-    </div>
     <%= yield %>
     <%= javascript_include_tag 'https://code.jquery.com/jquery-3.2.1.min.js' %>
     <%= javascript_include_tag 'https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js' %>

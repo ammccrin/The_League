@@ -9,7 +9,7 @@ module AdminsHelper
 	end
 
 	#used for if then statements!
-	def login?
+	def admin_login?
 	  !!current_admin
 	end
 

@@ -67,7 +67,7 @@ module MatchesHelper
 
 
 			if team1_score > team2_score
-				binding.pry
+				
 				points[0] += 3
 				points[1] += 0
 			else

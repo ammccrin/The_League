@@ -5,4 +5,5 @@ module ApplicationHelper
 	include LeaguesHelper
 	include ScoresHelper
 	include MatchesHelper
+	include UsersHelper
 end

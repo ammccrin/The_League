@@ -787,6 +787,7 @@ span {
 	}
 
 	.choice {
+		border-bottom: 15px solid;
 		padding: 15%;
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -801,11 +802,11 @@ span {
 	}
 
 	#players_button {
-
+		background-image: url(bowling_temp.jpg);
 	}
 
 	#teams_button {
-
+		background-image: url(bowling_temp.jpg);
 	}
 
 	.choice img {

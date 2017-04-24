@@ -16,12 +16,12 @@ class PlayersController < ApplicationController
 		@team.update_attributes(name: params[:team_name])
 		@league = current_admin.leagues[0]
 
-		@team.players.each_with_index do |player, i|
+		@team.order_players.each_with_index do |player, i|
 			player.update_attributes(name: params[:"Player #{i + 1}"])
 		end
 
 		@teams = current_admin.leagues[0].order_teams
-		@players = @team.players
+		@players = @team.order_players
 
 		if request.xhr?
 			render 'players/_player_form', layout: false

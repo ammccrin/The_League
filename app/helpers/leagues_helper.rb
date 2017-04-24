@@ -1,6 +1,6 @@
 module LeaguesHelper
 	def order_players(league)
-		league.players.sort_by { |player| player.average }
+		league.players.sort_by { |player| player.average }.reverse
 	end
 
 	def weekly_matches_create(league, curr_week)

@@ -53,7 +53,7 @@
 						<p>Fill in the scores below, mark an 'a' if a player is absent</p>
 					</div>
 
-					<% match.games.each do | game | %>
+					<% match.order_games.each do | game | %>
 							<div class="game"><h4>Game <%= game.game_num %></h4></div>
 							<div class="form_holder">
 								<h2><%=  match.team1.name %></h2>

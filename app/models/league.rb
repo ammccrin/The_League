@@ -22,10 +22,13 @@ class League < ApplicationRecord
 		end
 	end
 
-
 	def order_teams
-		order = self.teams.sort_by { | team | team.count_points }
-		order.reverse
+		order = self.teams.sort_by { | team | team.id }
+	end
+
+
+	def order_teams_points
+		order = order_teams.sort_by { | team | team.count_points }.reverse
 	end
 
 end

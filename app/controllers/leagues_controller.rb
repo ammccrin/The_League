@@ -45,7 +45,7 @@ class LeaguesController < ApplicationController
 
 	def show
 		if admin_login? == false && user_login? == false
-			redirect '/'
+			render '/'
 		end
 	
 		if admin_login?

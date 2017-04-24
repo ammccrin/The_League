@@ -6,7 +6,7 @@ class ScoresController < ApplicationController
 		@game = Game.find_by(id: params[:game_id])
 		scores = []
 
-		@team.players.each_with_index do | player, i |
+		@team.order_players.each_with_index do | player, i |
 			# Check to see if player is absent
 			if params["p#{i}".to_s].downcase != 'a'
 				score = Score.find_or_initialize_by(player_id: player.id, game_id: params[:game_id], week_id: @week.id)

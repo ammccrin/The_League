@@ -12,7 +12,6 @@ class TeamsController < ApplicationController
 
 	def create
 		@teams = current_admin.leagues[0].order_teams
-		binding.pry
 		@league = current_admin.leagues[0]
 		@num_of_players = params[:num_of_players].to_i
 

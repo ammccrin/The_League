@@ -18,4 +18,8 @@ class Team < ApplicationRecord
 		end
 	end
 
+	def order_players
+		order = self.players.sort_by { | player | player.id }
+	end
+
 end

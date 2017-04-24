@@ -2,12 +2,12 @@
   <%= render 'layouts/errors' %>
 <% end %>
 
-<% @teams.reverse.each do |team| %>
+<% @teams.each do |team| %>
 	<div class="box">
 		<%= form_tag("/players", method: "post", id: 'player', class: "form player") do %>
 			<%= text_field_tag(:team_name, nil, placeholder: team.name, class: 'team_name')%>
 			<%= hidden_field_tag 'team_id', team.id %>
-			<% team.players.each do |player| %>
+			<% team.order_players.each do |player| %>
 		  	<%= text_field_tag((player.name).to_sym, nil, placeholder: player.name)%>
 			<% end %>
 		  <%= submit_tag "Save", :class => 'submit'  %>

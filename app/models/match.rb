@@ -9,4 +9,9 @@ class Match < ApplicationRecord
 
 	validates :team1_id, :team2_id, :league_id, presence: true 
 
+
+	def order_games
+		order = self.games.sort_by { | game | game.id }
+	end
+
 end

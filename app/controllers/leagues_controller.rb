@@ -59,8 +59,9 @@ class LeaguesController < ApplicationController
 		end
 
 		@week = @league.weeks[-1]
-		@teams = @league.order_teams
+		@teams = @league.order_teams_points
 		@players = order_players(@league)
+binding.pry
 		@matches = @week.order_matches
 		if @week.matches == []
 			weekly_matches_create(@league, @week)

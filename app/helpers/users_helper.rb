@@ -5,7 +5,7 @@ module UsersHelper
 	end
 
 	def require_user
-	  redirect '/' unless current_user
+	  redirect_to '/' unless current_user
 	end
 
 	#used for if then statements!
@@ -13,8 +13,8 @@ module UsersHelper
 	  !!current_user
 	end
 
-	def authorized_user(object_owner)
-	  redirect '/' unless  (current_user == object_owner)
+	def authorized_user(league_id)
+	  redirect_to '/' unless  (current_user.league.id == league_id)
 	end
 
 end

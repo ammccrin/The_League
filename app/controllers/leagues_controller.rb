@@ -44,18 +44,18 @@ class LeaguesController < ApplicationController
 	end
 
 	def show
-		if admin_login? == false && user_login? == false
-			render '/'
-		end
-	
 		if admin_login?
+			authorized_admin(params[:id].to_i)
 			@admin = current_admin
 			@league = @admin.leagues[0]
-		end 
 
-		if user_login?
+		elsif user_login?
+			authorized_user(params[:id].to_i)
 			@user = current_user
 			@league = @user.league
+
+		else
+			render '/'
 		end
 
 		@week = @league.weeks[-1]

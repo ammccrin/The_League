@@ -5,7 +5,7 @@ module AdminsHelper
 	end
 
 	def require_admin
-	  redirect '/' unless current_admin
+	  redirect_to '/' unless current_admin
 	end
 
 	#used for if then statements!
@@ -13,8 +13,8 @@ module AdminsHelper
 	  !!current_admin
 	end
 
-	def authorized_admin(object_owner)
-	  redirect '/' unless  (current_admin == object_owner)
+	def authorized_admin(league_id)
+	  redirect_to '/' unless  (current_admin.leagues[0].id == league_id)
 	end
 
 

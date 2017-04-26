@@ -44,44 +44,45 @@ class LeaguesController < ApplicationController
 	end
 
 	def show
-		if admin_login?
+		if current_admin
 			authorized_admin(params[:id].to_i)
 			@admin = current_admin
 			@league = @admin.leagues[0]
 
-		elsif user_login?
+		elsif current_user
 			authorized_user(params[:id].to_i)
 			@user = current_user
 			@league = @user.league
 
 		else
-			render '/'
+			redirect_to '/'
 		end
 
-		@week = @league.weeks[-1]
-		@teams = @league.order_teams_points
-		@players = order_players(@league)
-		@matches = @week.order_matches
-		if @week.matches == []
-			weekly_matches_create(@league, @week)
-		end
-
-
-		if weekly_matches_done(@matches) 
-			@matches.each do | match |
-				score_calculator(match)
+		if current_user || current_admin
+			@week = @league.weeks[-1]
+			@teams = @league.order_teams_points
+			@players = order_players(@league)
+			@matches = @week.order_matches
+			if @week.matches == []
+				weekly_matches_create(@league, @week)
 			end
 
-			if @league.num_of_weeks != @week.week
-				@week = @league.weeks.create(week: @league.weeks.length + 1)
-				weekly_matches_create(@league, @week)
-				@matches = @week.matches
-
-				@players.each do | player |
-					player.calculate_average
+			if weekly_matches_done(@matches) 
+				@matches.each do | match |
+					score_calculator(match)
 				end
 
-				@players = order_players(@league)
+				if @league.num_of_weeks != @week.week
+					@week = @league.weeks.create(week: @league.weeks.length + 1)
+					weekly_matches_create(@league, @week)
+					@matches = @week.matches
+
+					@players.each do | player |
+						player.calculate_average
+					end
+
+					@players = order_players(@league)
+				end
 			end
 		end
 	end

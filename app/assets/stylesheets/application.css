@@ -789,31 +789,32 @@ span {
 		background-position: 0% 50%;
 	}
 
-	.blue_background {
-		background-color: #2179a6;
-	}
-
 	.choice {
 		border-bottom: 15px solid;
 		padding: 15%;
 		background-size: cover;
 		background-repeat: no-repeat;
-		-webkit-transition: background 1s;
-    -moz-transition: background 1s;
-    -o-transition: background 1s;
-    transition: background 1s;
+		-webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    -o-transition: background .5s;
+    transition: background .5s;
 	}
 
 	#matches_button {
-		background-image: url(bowling_temp.jpg);
+		background-color: transparent;
+		background-image: url(matchup_image.png);
+		background-position: 0% 30%;
 	}
 
 	#players_button {
-		background-image: url(bowling_temp.jpg);
+		background-color: transparent;
+		background-image: url(player_image.png);
 	}
 
 	#teams_button {
-		background-image: url(bowling_temp.jpg);
+		background-color: transparent;
+		background-image: url(team_image.png);
+		/*background-position: 0% 30%;*/
 	}
 
 	.choice img {
@@ -831,27 +832,30 @@ span {
 	}
 
 	#matches_button:hover {
-		background-image: url(bowling_temp_s.png);
-		-webkit-transition: background 1s;
-    -moz-transition: background 1s;
-    -o-transition: background 1s;
-    transition: background 1s;
+		background-image: url(matchup_image_blue.png);
+		background-color: #2179a6;
+		-webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    -o-transition: background .5s;
+    transition: background .5s;
 	}
 
 	#teams_button:hover {
-		/*background-image: url(bowling_temp_s.png);*/
-		-webkit-transition: background 1s;
-    -moz-transition: background 1s;
-    -o-transition: background 1s;
-    transition: background 1s;
+		background-image: url(team_image_blue.png);
+		background-color: #2179a6;
+		-webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    -o-transition: background .5s;
+    transition: background .5s;
 	}
 
 	#players_button:hover {
-		/*background-image: url(bowling_temp_s.png);*/
-		-webkit-transition: background 1s;
-    -moz-transition: background 1s;
-    -o-transition: background 1s;
-    transition: background 1s;
+		background-image: url(player_image_blue.png);
+		background-color: #2179a6;
+		-webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    -o-transition: background .5s;
+    transition: background .5s;
 	}
 
 	.button {
